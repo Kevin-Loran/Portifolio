@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #1d63b8;
+    --preto: #000000;
+    --branco: #ffffff;
+    --cinza: #e0e0e0;
+    --cinza-claro: #f4f7fa;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--preto);
+}
