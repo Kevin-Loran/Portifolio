@@ -22,17 +22,28 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 100px;
-
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(224, 224, 224, 0.35);
+    padding: 10px 100px;
+}
+
+header.scrolled .logo img{
+    width: 160px;
 }
 
 .logo img {
     width: 200px;
     height: auto;
+    transition: width 0.3s ease;
 }
 
 .logo {
@@ -51,8 +62,14 @@ nav a {
     color: var(--preto);
     font-weight: 500;
     font-size: 16px;
+
+    transition: color 0.5s ease;
 }
 nav a:hover {
+    color: var(--azul)
+}
+
+nav a.active {
     color: var(--azul)
 }
 
@@ -78,7 +95,7 @@ nav a:hover {
 
 .oi {
     font-family: "Roboto Mono", monospace;
-    margin-left: 0;
+    margin-left: -4px;
     font-size: 30px;
     font-weight: 400;
 }
@@ -92,18 +109,105 @@ nav a:hover {
 
 .home-links {
     display: flex;
-    gap: 24px;
     margin-top: 24px;
+    gap: 30px;
 }
 
-.home-links a {
+.home-links {
+    display: flex;
+    margin-top: 24px;
+    gap: 30px;
+}
+
+.btn {
+    --bink: var(--preto);
+    --bsurf: var(--cinza);
+
+    position: relative;
+    isolation: isolate;
+    display: inline-block;
+
     font-family: "Inter", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    gap: 24px;
-    color: var(--preto);
-    text-decoration: none;
 
-    background-color: var(--cinza);
     padding: 15px 45px;
+
+    border: 1px solid transparent;
+    border-radius: 0;
+
+    background: var(--bsurf);
+    color: var(--bink);
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: color 0.4s ease;
+}
+
+.btn-label {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}
+
+.btn::before {
+    display: none;
+}
+
+.fx-15 {
+    overflow: visible;
+    box-shadow: none;
+}
+
+.fx-15::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border: 2px solid var(--azul);
+    border-radius: 0;
+
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.45s ease;
+
+    pointer-events: none;
+}
+
+.fx-15:hover::after {
+    clip-path: inset(0 0 0 0);
+}
+
+.home-links a span {
+    position: relative;
+    z-index: 3;
+}
+
+.home-links a {
+    isolation: isolate;
+}
+
+.home-links a span {
+    position: relative;
+    z-index: 3;
+}
+
+.sobre {
+    min-height: 100vh;
+    background-color: var(--branco);
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--azul);
+    margin-left: 4px;
+    animation: piscar 0.7s steps(1) infinite;
+}
+
+@keyframes piscar {
+    50% {
+        opacity: 0;
+    }
 }
