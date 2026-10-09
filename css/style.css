@@ -10,12 +10,17 @@
     --branco: #ffffff;
     --cinza: #e0e0e0;
     --cinza-claro: #f4f7fa;
+    --cinza-auxiliar: #526579;
 }
 
 body {
-    background-color: var(--branco);
     color: var(--preto);
+    background-image: url(../assets/texturas/fundo_home_final.svg);
+    background-size: cover;
+    background-position: center;
 }
+
+
 
 header {
     display: flex;
@@ -79,11 +84,6 @@ nav a.active {
     flex-direction: column;
     justify-content: center;
     padding: 120px 100px 60px;
-    margin-left: 70px;
-
-    background-image: url(../assets/texturas/textura_home.jfif);
-    background-size: cover;
-    background-position: center;
 }
 
 .home h1 {
@@ -194,10 +194,6 @@ nav a.active {
     z-index: 3;
 }
 
-.sobre {
-    min-height: 100vh;
-    background-color: var(--branco);
-}
 
 .cursor {
     display: inline-block;
@@ -210,4 +206,156 @@ nav a.active {
     50% {
         opacity: 0;
     }
+}
+
+.sobre {
+    min-height: 100vh;
+    padding: 140px 100px 60px;
+    background-color: transparent;
+}
+
+.cabecalho-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.etiqueta-section {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 8px 16px;
+
+    border: 1px solid var(--azul);
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--azul);
+}
+.ponto-section {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    background-color: var(--azul);
+    border-radius: 50%;
+}
+
+.titulo-section {
+    font-family: "Roboto Mono", monospace;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -2px;
+
+    color: var(--cinza-auxiliar);
+}
+
+.titulo-section span {
+    color: var(--azul);
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.sobre-apresentacao {
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: var(--preto);
+}
+
+.sobre-apresentacao strong {
+    font-weight: 700;
+}
+
+.sobre-descricao {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.9;
+    margin-top: 10px;
+
+    color: var(--cinza-auxiliar);
+}
+
+.sobre-destaque {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    padding: 24px;
+
+    border-left: 3px solid var(--azul);
+    background-color: rgba(29, 99, 184, 0.07);
+}
+
+.destaque-numero {
+    font-family: "Roboto Mono", monospace;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+
+    color: var(--azul);
+}
+
+.sobre-destaque p {
+    font-family: "inter", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    color: var(--preto);
+}
+
+.sobre-cards-secundarios {
+    display: grid;
+    grid-template-columns: repeat(2, minman(0, 1fr));
+    gap: 14px;
+}
+
+.sobre-cards {
+    min-width: 0;
+    padding: 22px 18px;
+
+    border: 1px solid rgba(29, 99, 184, 0.18);
+    background-color:  rgba(244, 247, 250, 0.75);
+}
+
+.card-etiqueta {
+    display: block;
+    margin-bottom: 14px;
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: var(--azul);
+}
+
+.sobre-card h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+
+    color: var(--preto);
+}
+
+.sobre-card-largo {
+    grid-column: 1 / -1;
 }
