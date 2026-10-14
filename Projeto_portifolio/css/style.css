@@ -142,17 +142,17 @@ button:focus-visible {
 
 .home {
     display: flex;
-    align-items: center;            /* Centraliza verticalmente texto e foto no meio da section */
-    justify-content: space-between; /* Texto na esquerda e foto na direita */
+    align-items: center;            
+    justify-content: space-between; 
     gap: 40px;
 
     min-height: 100vh;
     min-height: 100svh;
 
     width: 100%;
-    max-width: 1400px;              /* Impede que o conteúdo se espalhe demais em telas ultrawide */
-    margin: 0 auto;                 /* Centraliza a section horizontalmente na tela */
-    padding:  100px 60px;      /* Mesmo recuo lateral do header; topo livre da navbar */
+    max-width: 1400px;               
+    margin: 0 auto;                 
+    padding:  100px 60px;     
 }
 
 
@@ -163,10 +163,6 @@ button:focus-visible {
 .home-texto {
     flex: 1;
 }
-
-/* --- CONTAINER DA FOTO COM BORDAS E ÓRBITA --- */
-/* Todas as medidas derivam de --tam: ao mudar o tamanho (mobile), a moldura
-   e o raio da órbita da bolinha acompanham sozinhos. */
 
 .home-foto {
     --tam: 280px;
@@ -180,12 +176,10 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
 
-    /* 1. LINHA FINA FIXA AO REDOR (Borda externa orbital) */
     border: 1px solid rgba(220, 220, 220, 0.95);
     border-radius: 50%;
 }
 
-/* 2. A BOLINHA LUMINOSA QUE GIRA PELA LINHA */
 .home-foto::before {
     content: "";
     position: absolute;
@@ -199,13 +193,11 @@ button:focus-visible {
     background-color: var(--azul);
     box-shadow: 0 0 8px var(--azul);
 
-    /* Gira em torno do centro da foto: raio = metade do container (sem as bordas de 1px) */
     transform-origin: 4px calc(var(--tam) / 2 + 3px);
 
     animation: orbitarBolinha 6s linear infinite;
 }
 
-/* MOLDURA DA FOTO INTERNA */
 .home-foto-moldura {
     width: calc(var(--tam) - 40px);
     height: calc(var(--tam) - 40px);
@@ -224,7 +216,6 @@ button:focus-visible {
     border-radius: 50%;
 }
 
-/* --- ANIMAÇÃO DE ÓRBITA CIRCULAR --- */
 @keyframes orbitarBolinha {
     0% {
         transform: rotate(0deg);
@@ -236,7 +227,7 @@ button:focus-visible {
 
 .status-online {
     position: absolute;
-    bottom: 12px;                  /* Posiciona no canto inferior da foto */
+    bottom: 12px;                  
     right: 12px;                   /* Alinha ao lado direito */
     z-index: 10;                   /* Garante que fique acima das bordas e da foto */
 
